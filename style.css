@@ -1,0 +1,51 @@
+/*
+font-family: 'Lobster', cursive;
+font-family: 'Slabo 27px', serif;
+*/
+
+body{
+	background-color: #333333;
+}
+
+h1{
+	font-family: 'Lobster', cursive;
+	font-size: 86px;
+	color: white;
+}
+
+.break{
+	
+	color: white;
+	text-align: center;
+	margin-top: 30px;
+	font-family: 'Slabo 27px', serif;
+	font-size: 20px;
+}
+
+.session{
+	
+	color: white;
+	text-align: center;
+	margin-top: 30px;
+	font-family: 'Slabo 27px', serif;
+	font-size: 20px;
+}
+
+.plus{
+	cursor:pointer;
+}
+
+.minus{
+	cursor:pointer;
+}
+
+
+.clock{
+	border: 5px solid green;
+	border-radius: 100%;
+	width: 350px;
+	height: 350px;
+	z-index: 2;
+	color: red;
+	margin-top: 50px;
+}
