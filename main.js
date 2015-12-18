@@ -62,6 +62,8 @@ $(document).ready(function(){
 	function update(){
 		//switch from session to break
 		if(timeLeft == 0 && sessionRunning == true){
+			var audio = new Audio('sound.mp3');
+			audio.play();
 			sessionRunning = false;
 			breakRunning = true;
 			timeLeft = parseInt($("#breakText").text()) * 60;
@@ -69,6 +71,8 @@ $(document).ready(function(){
 		}
 		//switch from break to switch
 		else if(timeLeft == 0 && breakRunning == true){
+			var audio = new Audio('sound.mp3');
+			audio.play();
 			breakRunning = false;
 			sessionRunning = true;
 			timeLeft = parseInt($("#sessionText").text()) * 60;
