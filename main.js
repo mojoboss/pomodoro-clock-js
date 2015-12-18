@@ -1,4 +1,13 @@
 $(document).ready(function(){
+	//jQuery animation plugin
+	$('#circle').circleProgress({
+        value: 0.5,
+        startAngle: -Math.PI/2,
+        size: 80,
+        fill: {
+            gradient: ["green", "white"]
+        }
+    });
 	//globals
 	var timeLeft = parseInt($("#sessionText").text()) * 60 ; // this varible stores the time in seconds
 	var sessionRunning = true;
@@ -76,7 +85,7 @@ $(document).ready(function(){
 			breakRunning = false;
 			sessionRunning = true;
 			timeLeft = parseInt($("#sessionText").text()) * 60;
-			$("#clockText").html("Session");	
+			$("#clockText").html("Session");
 		}
 		//calculating hr, min and seconds
 		var hours = parseInt(timeLeft/3600); 
@@ -104,5 +113,25 @@ $(document).ready(function(){
 		var clockTime = H + ":" + M + ":" + S ;
 		$("#clockTextTime").html(clockTime);
 		timeLeft = timeLeft - 1;
+
+		//setting circular clock display
+		var percent = null;
+		var initialValue = null;
+		if(sessionRunning){
+			initialValue = parseInt($("#sessionText").text()) * 60;
+			percent = parseInt((initialValue-timeLeft)/(initialValue) * 100);
+		}
+		if(breakRunning){
+			initialValue = parseInt($("#breakText").text()) * 60;
+			percent = parseInt((initialValue-timeLeft)/(initialValue) * 100);
+		}
+		//updating the radial progress bar
+		$('#circle').circleProgress({
+	        value: percent/100
+	    });
+		//console.log("%", percent);
 	}
 });
+
+
+
