@@ -6,4 +6,5 @@
 <li>Set the break time using Break Length.</li>
 <li>Click the clock to start or pause the timer. Time interval can be set only when the clock is stopped.</li>
 <li>A bell will ring to notify the user when a time interval ends.</li>
+<li>For radical progress-bar animation, <a href="http://kottenator.github.io/jquery-circle-progress/">this</a> jQuery plugin is used.</li>
 </ul>
